@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "VCLPolygon.h"
 #import "Paralelogramo.h"
 #import "Triangle.h"
 @interface ViewController ()

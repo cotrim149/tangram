@@ -14,6 +14,8 @@
 		9FAD861C19F6C40300783249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAD861B19F6C40300783249 /* Images.xcassets */; };
 		9FAD861F19F6C40300783249 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAD861D19F6C40300783249 /* LaunchScreen.xib */; };
 		9FAD862B19F6C40300783249 /* TangramAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD862A19F6C40300783249 /* TangramAnimationTests.m */; };
+		A43874A219F6E1C400E0E410 /* Paralelogramo.m in Sources */ = {isa = PBXBuildFile; fileRef = A438749D19F6E1C400E0E410 /* Paralelogramo.m */; };
+		A43874A419F6E1C400E0E410 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = A43874A119F6E1C400E0E410 /* Triangle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		9FAD862419F6C40300783249 /* TangramAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TangramAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAD862919F6C40300783249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FAD862A19F6C40300783249 /* TangramAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TangramAnimationTests.m; sourceTree = "<group>"; };
+		A438749C19F6E1C400E0E410 /* Paralelogramo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paralelogramo.h; sourceTree = "<group>"; };
+		A438749D19F6E1C400E0E410 /* Paralelogramo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paralelogramo.m; sourceTree = "<group>"; };
+		A43874A019F6E1C400E0E410 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		A43874A119F6E1C400E0E410 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				9FAD861319F6C40300783249 /* AppDelegate.m */,
 				9FAD861519F6C40300783249 /* ViewController.h */,
 				9FAD861619F6C40300783249 /* ViewController.m */,
+				A438749C19F6E1C400E0E410 /* Paralelogramo.h */,
+				A438749D19F6E1C400E0E410 /* Paralelogramo.m */,
+				A43874A019F6E1C400E0E410 /* Triangle.h */,
+				A43874A119F6E1C400E0E410 /* Triangle.m */,
 				9FAD861819F6C40300783249 /* Main.storyboard */,
 				9FAD861B19F6C40300783249 /* Images.xcassets */,
 				9FAD861D19F6C40300783249 /* LaunchScreen.xib */,
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43874A219F6E1C400E0E410 /* Paralelogramo.m in Sources */,
 				9FAD861719F6C40300783249 /* ViewController.m in Sources */,
 				9FAD861419F6C40300783249 /* AppDelegate.m in Sources */,
 				9FAD861119F6C40300783249 /* main.m in Sources */,
+				A43874A419F6E1C400E0E410 /* Triangle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				9FAD863019F6C40300783249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FAD863119F6C40300783249 /* Build configuration list for PBXNativeTarget "TangramAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				9FAD863319F6C40300783249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
