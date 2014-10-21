@@ -8,29 +8,26 @@
 
 #import "ViewController.h"
 #import "VCLPolygon.h"
-
+#import "Paralelogramo.h"
+#import "Triangle.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    CGFloat width = 50;
-    CGFloat height = 100;
-    CGRect triangleDraw = CGRectMake(50, 150, width, height);
-    //CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    CGRect rect = CGRectMake(50, 50, 50, 50);
+    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
+    paralelogramo.backgroundColor = [UIColor clearColor];
     
-    VCLPolygon *triangle = [[VCLPolygon alloc] initWithFrame:triangleDraw];
-    triangle.backgroundColor = [UIColor clearColor];
-    triangle.transform = CGAffineTransformMakeRotation(45*M_PI/180);
-
-    [self.view addSubview:triangle];
-        
+    [self.view addSubview:paralelogramo];
     
-    
+    //    [UIView animateWithDuration:2.0 animations:^{
+    //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
+    //    }];
     
 }
 
