@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface Paralelogramo : UIView
+@property (nonatomic) CGFloat red;
+@property (nonatomic) CGFloat green;
+@property (nonatomic) CGFloat blue;
 
 @end
