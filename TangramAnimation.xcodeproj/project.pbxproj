@@ -16,6 +16,7 @@
 		9FAD862B19F6C40300783249 /* TangramAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD862A19F6C40300783249 /* TangramAnimationTests.m */; };
 		A43874A219F6E1C400E0E410 /* Paralelogramo.m in Sources */ = {isa = PBXBuildFile; fileRef = A438749D19F6E1C400E0E410 /* Paralelogramo.m */; };
 		A43874A419F6E1C400E0E410 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = A43874A119F6E1C400E0E410 /* Triangle.m */; };
+		A43874A719F6E28E00E0E410 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = A43874A619F6E28E00E0E410 /* Square.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		A438749D19F6E1C400E0E410 /* Paralelogramo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paralelogramo.m; sourceTree = "<group>"; };
 		A43874A019F6E1C400E0E410 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		A43874A119F6E1C400E0E410 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
+		A43874A519F6E28E00E0E410 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
+		A43874A619F6E28E00E0E410 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				A438749D19F6E1C400E0E410 /* Paralelogramo.m */,
 				A43874A019F6E1C400E0E410 /* Triangle.h */,
 				A43874A119F6E1C400E0E410 /* Triangle.m */,
+				A43874A519F6E28E00E0E410 /* Square.h */,
+				A43874A619F6E28E00E0E410 /* Square.m */,
 				9FAD861819F6C40300783249 /* Main.storyboard */,
 				9FAD861B19F6C40300783249 /* Images.xcassets */,
 				9FAD861D19F6C40300783249 /* LaunchScreen.xib */,
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43874A719F6E28E00E0E410 /* Square.m in Sources */,
 				A43874A219F6E1C400E0E410 /* Paralelogramo.m in Sources */,
 				9FAD861719F6C40300783249 /* ViewController.m in Sources */,
 				9FAD861419F6C40300783249 /* AppDelegate.m in Sources */,
