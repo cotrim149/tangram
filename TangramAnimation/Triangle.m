@@ -18,7 +18,8 @@
     CGContextAddLineToPoint(ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect)); // bottom left
     CGContextClosePath(ctx);
     
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
+    CGContextSetRGBFillColor(ctx, _red/255.0f, _green/255.0f, _blue/255.0f, 1);
+
     CGContextFillPath(ctx);
 }
 @end

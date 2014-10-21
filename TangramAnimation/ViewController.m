@@ -19,12 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGRect rect = CGRectMake(100, 50, 50, 50);
-    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
-    paralelogramo.backgroundColor = [UIColor clearColor];
-    
-    [self.view addSubview:paralelogramo];
-    
+//    CGRect rect = CGRectMake(100, 50, 50, 50);
+//    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
+//    paralelogramo.backgroundColor = [UIColor clearColor];
+//    
+//    [self.view addSubview:paralelogramo];
+//    
     
     CGRect rect2 = CGRectMake(100,400, 50, 100);
 

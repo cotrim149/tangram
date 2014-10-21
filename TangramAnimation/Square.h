@@ -10,4 +10,8 @@
 
 @interface Square : UIView
 
+@property (nonatomic) CGFloat red;
+@property (nonatomic) CGFloat blue;
+@property (nonatomic) CGFloat green;
+
 @end
