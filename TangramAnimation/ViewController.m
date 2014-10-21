@@ -26,7 +26,7 @@
 //    [self.view addSubview:paralelogramo];
 //    
     
-    CGRect rect2 = CGRectMake(100,400, 50, 100);
+    CGRect rect2 = CGRectMake(240,110, 50, 100);
 
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
