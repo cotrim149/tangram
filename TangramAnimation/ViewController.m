@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Paralelogramo.h"
 #import "Triangle.h"
+#import "Square.h"
 @interface ViewController ()
 
 @end
@@ -24,6 +25,12 @@
     
     [self.view addSubview:paralelogramo];
     
+    
+    CGRect rect2 = CGRectMake(100,400, 100, 100);
+
+    Square* quadrado = [[Square alloc]initWithFrame:rect2];
+    quadrado.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:quadrado];
     //    [UIView animateWithDuration:2.0 animations:^{
     //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
     //    }];
