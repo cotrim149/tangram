@@ -18,25 +18,26 @@
     // Drawing code
 
 
-    CGRect squareOne = CGRectMake(rect.origin.x,rect.origin.y,rect.size.width/2,rect.size.height);
+    
+    CGRect squareOne = CGRectMake(rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
     Triangle *triangleOne = [[Triangle alloc] initWithFrame:squareOne];
     triangleOne.backgroundColor = [UIColor clearColor];
     triangleOne.transform = CGAffineTransformMakeRotation(45*M_PI/180);
     [self addSubview:triangleOne];
-
-    CGRect squareTwo = CGRectMake(rect.origin.x+rect.size.width/2-15,rect.origin.y,rect.size.width/2,rect.size.height);
+    
+    CGRect squareTwo = CGRectMake(rect.origin.x+rect.size.width-0.30*rect.size.width,rect.origin.y,rect.size.width,rect.size.height);
     Triangle *triangleTwo = [[Triangle alloc] initWithFrame:squareTwo];
     triangleTwo.backgroundColor = [UIColor clearColor];
     triangleTwo.transform = CGAffineTransformMakeRotation(135*M_PI/180);
     [self addSubview:triangleTwo];
     
-    CGRect squareThree= CGRectMake(rect.origin.x+rect.size.width/2-15,rect.origin.y+rect.size.height/2-15,rect.size.width/2,rect.size.height);
+    CGRect squareThree= CGRectMake(rect.origin.x+rect.size.width-0.30*rect.size.width,rect.origin.y+rect.size.height/2-0.15*rect.size.height,rect.size.width,rect.size.height);
     Triangle *triangleThree = [[Triangle alloc] initWithFrame:squareThree];
     triangleThree.backgroundColor = [UIColor clearColor];
     triangleThree.transform = CGAffineTransformMakeRotation(225*M_PI/180);
     [self addSubview:triangleThree];
     
-    CGRect squareFour= CGRectMake(rect.origin.x,rect.origin.y+rect.size.height/2-15,rect.size.width/2,rect.size.height);
+    CGRect squareFour= CGRectMake(rect.origin.x,rect.origin.y+rect.size.height/2-0.15*rect.size.height,rect.size.width,rect.size.height);
     Triangle *triangleFour = [[Triangle alloc] initWithFrame:squareFour];
     triangleFour.backgroundColor = [UIColor clearColor];
     triangleFour.transform = CGAffineTransformMakeRotation(315*M_PI/180);
