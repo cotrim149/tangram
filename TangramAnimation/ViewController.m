@@ -19,21 +19,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    CGRect rect = CGRectMake(100, 50, 50, 50);
-//    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
-//    paralelogramo.backgroundColor = [UIColor clearColor];
-//    
-//    [self.view addSubview:paralelogramo];
-//    
+    
+    //paralelogramo
+    CGRect rect = CGRectMake(100, 50, 50, 50);
+    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
+    paralelogramo.backgroundColor = [UIColor clearColor];
+    
+    [self.view addSubview:paralelogramo];
+    
     
     CGRect rect2 = CGRectMake(240,110, 50, 100);
-
+    //"quadrado"
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
     [self.view addSubview:quadrado];
     //    [UIView animateWithDuration:2.0 animations:^{
     //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
     //    }];
+    
+    
+    
+    //triangulo numero 4
+    CGRect rectTriangulo = CGRectMake(186.5, 161.8, 50, 100);
+    Triangle* triangulo = [[Triangle alloc]initWithFrame:rectTriangulo];
+    triangulo.red = 100;
+    triangulo.green = 200;
+    triangulo.blue = 0;
+    triangulo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangulo];
+    triangulo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+
+    
+    
+    
     
 }
 
