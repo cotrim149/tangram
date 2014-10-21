@@ -19,12 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //paralelogramo
+
     CGRect rect = CGRectMake(100, 50, 50, 50);
     Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
     paralelogramo.backgroundColor = [UIColor clearColor];
-    
+    paralelogramo.red = 140;
+    paralelogramo.blue = 200;
+    paralelogramo.green = 60;
     [self.view addSubview:paralelogramo];
     
     
@@ -32,6 +33,9 @@
     //"quadrado"
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
+    quadrado.red = 150;
+    quadrado.blue = 0;
+    quadrado.green = 20;
     [self.view addSubview:quadrado];
     //    [UIView animateWithDuration:2.0 animations:^{
     //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
