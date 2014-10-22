@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CGRect rect = CGRectMake(100, 50, 50, 100);
+    //Paralelogram 3
+    CGRect rect = CGRectMake(97, 50, 50, 100);
     Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
     paralelogramo.backgroundColor = [UIColor clearColor];
     paralelogramo.red = 140;
@@ -29,8 +30,8 @@
     [self.view addSubview:paralelogramo];
     
     
-    CGRect rect2 = CGRectMake(240,110, 50, 100);
-    //"quadrado"
+    CGRect rect2 = CGRectMake(240,109.5, 50, 100);
+    //Quadrado 5
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
     quadrado.red = 150;
@@ -43,17 +44,18 @@
     
     
     
-    //triangulo numero 4
-    CGRect rectTriangulo = CGRectMake(186.5, 161.8, 50, 100);
-    Triangle* triangulo = [[Triangle alloc]initWithFrame:rectTriangulo];
-    triangulo.red = 100;
-    triangulo.green = 200;
-    triangulo.blue = 0;
-    triangulo.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangulo];
-    triangulo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+    //triangulo 4
+    CGRect rectTrianguloMenor4 = CGRectMake(186.5, 161.8, 50, 100);
+    Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
+    trianguloMenor4.red = 100;
+    trianguloMenor4.green = 200;
+    trianguloMenor4.blue = 0;
+    trianguloMenor4.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMenor4];
+    trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
 
     
+<<<<<<< HEAD
     //Triangulo 7
     CGRect rectTriangulo7 = CGRectMake(243+rectTriangulo.size.width, 133+rectTriangulo.size.height, 50, 100);
     Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
@@ -65,6 +67,33 @@
     CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
     CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
     triangle7.transform = CGAffineTransformConcat(scale,rotate);
+=======
+    //triangulo 1
+    CGRect rectTriangulo1 = CGRectMake(115, 125, 50, 100);
+    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
+    triangulo1.red = 0;
+    triangulo1.green = 0;
+    triangulo1.blue = 225;
+    triangulo1.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangulo1];
+    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.9, 2.9),CGAffineTransformMakeRotation(M_PI/180));
+    
+
+    
+    
+    CGRect rectTrianguloMaior2 = CGRectMake(185, 55, 50, 100);
+    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
+    trianguloMaior2.red = 80;
+    trianguloMaior2.green = 200;
+    trianguloMaior2.blue = 100;
+    trianguloMaior2.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMaior2];
+    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(3, 3),CGAffineTransformMakeRotation(90*M_PI/180));
+    
+    
+    
+
+>>>>>>> bd3e81b1561ef4cb4261e591640240c174e47d26
     
     
 }
