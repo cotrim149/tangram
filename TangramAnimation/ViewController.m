@@ -55,7 +55,7 @@
 -(void)setupPolygons{
     
     //Paralelogram 3
-    CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
+    CGRect rectParallelogram = CGRectMake(937, 5023, 50, 100);
     self.parallelogram = [[Paralelogramo alloc] initWithFrame:rectParallelogram];
     self.parallelogram.backgroundColor = [UIColor clearColor];
     self.parallelogram.red = 153;
@@ -65,7 +65,7 @@
     
     
     //Quadrado 5
-    CGRect rectSquare = CGRectMake(238,109, 50, 100);
+    CGRect rectSquare = CGRectMake(3,4, 50, 100);
     self.square = [[Square alloc]initWithFrame:rectSquare];
     self.square.backgroundColor = [UIColor clearColor];
     self.square.red = 255;
@@ -79,7 +79,7 @@
     
     
     //triangulo 4
-    CGRect rectLessTriangleOne = CGRectMake(185, 161.8, 50, 100);
+    CGRect rectLessTriangleOne = CGRectMake(32, 423, 50, 100);
     self.lessTriangleOne = [[Triangle alloc]initWithFrame:rectLessTriangleOne];
     self.lessTriangleOne.red = 255;
     self.lessTriangleOne.green = 77;
@@ -91,7 +91,7 @@
     
     
     //Triangulo 7
-    CGRect rectMidTriangle = CGRectMake(241+rectSquare.size.width, 132+rectSquare.size.height, 50, 100);
+    CGRect rectMidTriangle = CGRectMake(22+rectSquare.size.width, 1132+rectSquare.size.height, 50, 100);
     self.midTriangle = [[Triangle alloc] initWithFrame:rectMidTriangle];
     self.midTriangle.red = 0;
     self.midTriangle.green = 255;
@@ -101,7 +101,7 @@
 
     
     //triangulo 1
-    CGRect rectBiggerTriangleOne = CGRectMake(115, 126, 50, 100);
+    CGRect rectBiggerTriangleOne = CGRectMake(122, 52, 50, 100);
     self.biggerTriangleOne = [[Triangle alloc]initWithFrame:rectBiggerTriangleOne];
     self.biggerTriangleOne.red = 0;
     self.biggerTriangleOne.green = 0;
@@ -111,7 +111,7 @@
 
     
     //triangulo 2
-    CGRect rectBiggerTriangleTwo = CGRectMake(186, 56, 50, 100);
+    CGRect rectBiggerTriangleTwo = CGRectMake(18326, 56, 50, 100);
     self.biggerTriangleTwo = [[Triangle alloc]initWithFrame:rectBiggerTriangleTwo];
     self.biggerTriangleTwo.red = 80;
     self.biggerTriangleTwo.green = 200;
@@ -121,7 +121,7 @@
 
     
     //triangulo 6
-    CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
+    CGRect rectLessTriangleTwo = CGRectMake(292, 5732, 50, 100);
     self.lessTriangleTwo = [[Triangle alloc]initWithFrame:rectLessTriangleTwo];
     self.lessTriangleTwo.red = 255;
     self.lessTriangleTwo.green = 204;
