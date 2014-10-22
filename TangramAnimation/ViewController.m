@@ -55,6 +55,19 @@
     trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
 
     
+
+    //Triangulo 7
+    CGRect rectTriangulo7 = CGRectMake(243+rect2.size.width, 133+rect2.size.height, 50, 100);
+    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
+    triangle7.red = 20;
+    triangle7.green = 40;
+    triangle7.blue = 200;
+    triangle7.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangle7];
+    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
+    triangle7.transform = CGAffineTransformConcat(scale,rotate);
+
     //triangulo 1
     CGRect rectTriangulo1 = CGRectMake(115, 126, 50, 100);
     Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
@@ -77,10 +90,32 @@
     [self.view addSubview:trianguloMaior2];
     trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
     
+//
+//    //triangulo 1
+//    CGRect rectTriangulo1 = CGRectMake(120, 120, 50, 100);
+//    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
+//    triangulo1.red = 0;
+//    triangulo1.green = 0;
+//    triangulo1.blue = 225;
+//    triangulo1.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:triangulo1];
+//    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(3,3),CGAffineTransformMakeRotation(M_PI/180));
+//    
+//
+//    
+//    //triangulo 2
+//    CGRect rectTrianguloMaior2 = CGRectMake(185, 55, 50, 100);
+//    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
+//    trianguloMaior2.red = 80;
+//    trianguloMaior2.green = 200;
+//    trianguloMaior2.blue = 100;
+//    trianguloMaior2.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:trianguloMaior2];
+//    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(3, 3),CGAffineTransformMakeRotation(90*M_PI/180));
+//    
     
     
 
-    
     
 }
 
