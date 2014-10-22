@@ -55,9 +55,8 @@
     trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
 
     
-<<<<<<< HEAD
     //Triangulo 7
-    CGRect rectTriangulo7 = CGRectMake(243+rectTriangulo.size.width, 133+rectTriangulo.size.height, 50, 100);
+    CGRect rectTriangulo7 = CGRectMake(243+rect2.size.width, 133+rect2.size.height, 50, 100);
     Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
     triangle7.red = 20;
     triangle7.green = 40;
@@ -67,7 +66,7 @@
     CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
     CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
     triangle7.transform = CGAffineTransformConcat(scale,rotate);
-=======
+
     //triangulo 1
     CGRect rectTriangulo1 = CGRectMake(115, 125, 50, 100);
     Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
@@ -90,11 +89,7 @@
     [self.view addSubview:trianguloMaior2];
     trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(3, 3),CGAffineTransformMakeRotation(90*M_PI/180));
     
-    
-    
 
->>>>>>> bd3e81b1561ef4cb4261e591640240c174e47d26
-    
     
 }
 
