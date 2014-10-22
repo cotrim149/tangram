@@ -32,33 +32,33 @@
     
     
 
+    [self setupPolygons];
+    [self createBigSquare];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterP)];
-    singleTap.numberOfTouchesRequired = 1;
-    singleTap.numberOfTapsRequired =1;
-    singleTap.delegate=self;
-    [self.view addGestureRecognizer:singleTap];
-    
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterN)];
-    doubleTap.numberOfTouchesRequired = 1;
-    doubleTap.numberOfTapsRequired =2;
-    doubleTap.delegate=self;
-    [self.view addGestureRecognizer:doubleTap];
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(createBigSquare)];
-    longPress.numberOfTouchesRequired = 2;
     longPress.numberOfTapsRequired =1;
     longPress.delegate = self;
     longPress.minimumPressDuration = 0.3;
-    longPress.cancelsTouchesInView = NO;
+    longPress.cancelsTouchesInView = YES;
     [self.view addGestureRecognizer:longPress];
 
     
-    [UIView animateWithDuration:2.0 animations:^{
-        
-        [self setupPolygons];
-        
-    }completion:nil];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterP)];
+    singleTap.numberOfTapsRequired =1;
+    singleTap.delegate=self;
+    //[self.view addGestureRecognizer:singleTap];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterN)];
+    doubleTap.numberOfTapsRequired =2;
+    doubleTap.cancelsTouchesInView = YES;
+    doubleTap.delegate=self;
+   // [self.view addGestureRecognizer:doubleTap];
+    
+
+    
+    
+    
     
 }
 
@@ -152,7 +152,7 @@
 -(void)createBigSquare{
     
     
-    [UIView animateWithDuration:2.0 animations:^{
+   // [UIView animateWithDuration:2.0 animations:^{
 
     
     CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
@@ -183,8 +183,8 @@
     [self.lessTriangleTwo setFrame:rectLessTriangleTwo];
     self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
     
-    }completion:nil];
-
+  //  }completion:nil];
+    
 
 }
 
