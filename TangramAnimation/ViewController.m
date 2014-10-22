@@ -21,7 +21,7 @@
     [super viewDidLoad];
 
     //Paralelogram 3
-    CGRect rect = CGRectMake(100, 50, 50, 100);
+    CGRect rect = CGRectMake(97, 50, 50, 100);
     Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
     paralelogramo.backgroundColor = [UIColor clearColor];
     paralelogramo.red = 140;
@@ -30,7 +30,7 @@
     [self.view addSubview:paralelogramo];
     
     
-    CGRect rect2 = CGRectMake(240,110, 50, 100);
+    CGRect rect2 = CGRectMake(240,109.5, 50, 100);
     //Quadrado 5
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
@@ -53,6 +53,18 @@
     trianguloMenor4.backgroundColor = [UIColor clearColor];
     [self.view addSubview:trianguloMenor4];
     trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+
+    
+    //triangulo 1
+    CGRect rectTriangulo1 = CGRectMake(115, 125, 50, 100);
+    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
+    triangulo1.red = 0;
+    triangulo1.green = 0;
+    triangulo1.blue = 225;
+    triangulo1.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangulo1];
+    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.9, 2.9),CGAffineTransformMakeRotation(M_PI/180));
+    
 
     
     
