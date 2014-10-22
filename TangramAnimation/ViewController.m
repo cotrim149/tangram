@@ -24,9 +24,9 @@
     CGRect rect = CGRectMake(97, 50, 50, 100);
     Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
     paralelogramo.backgroundColor = [UIColor clearColor];
-    paralelogramo.red = 140;
-    paralelogramo.blue = 200;
-    paralelogramo.green = 60;
+    paralelogramo.red = 153;
+    paralelogramo.blue = 255;
+    paralelogramo.green = 77;
     [self.view addSubview:paralelogramo];
     
     
@@ -34,9 +34,9 @@
     //Quadrado 5
     Square* quadrado = [[Square alloc]initWithFrame:rect2];
     quadrado.backgroundColor = [UIColor clearColor];
-    quadrado.red = 150;
-    quadrado.blue = 0;
-    quadrado.green = 20;
+    quadrado.red = 255;
+    quadrado.blue = 77;
+    quadrado.green = 255;
     [self.view addSubview:quadrado];
     //    [UIView animateWithDuration:2.0 animations:^{
     //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
@@ -47,9 +47,9 @@
     //triangulo 4
     CGRect rectTrianguloMenor4 = CGRectMake(185, 161.8, 50, 100);
     Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
-    trianguloMenor4.red = 100;
-    trianguloMenor4.green = 200;
-    trianguloMenor4.blue = 0;
+    trianguloMenor4.red = 255;
+    trianguloMenor4.green = 77;
+    trianguloMenor4.blue = 255;
     trianguloMenor4.backgroundColor = [UIColor clearColor];
     [self.view addSubview:trianguloMenor4];
     trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
@@ -59,9 +59,9 @@
     //Triangulo 7
     CGRect rectTriangulo7 = CGRectMake(241+rect2.size.width, 132+rect2.size.height, 50, 100);
     Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
-    triangle7.red = 20;
-    triangle7.green = 40;
-    triangle7.blue = 200;
+    triangle7.red = 0;
+    triangle7.green = 255;
+    triangle7.blue = 255;
     triangle7.backgroundColor = [UIColor clearColor];
     [self.view addSubview:triangle7];
     CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
@@ -92,9 +92,9 @@
     //triangulo 6
     CGRect rectTrianguloMenor6 = CGRectMake(292, 57, 50, 100);
     Triangle* trianguloMenor6 = [[Triangle alloc]initWithFrame:rectTrianguloMenor6];
-    trianguloMenor6.red = 100;
-    trianguloMenor6.green = 200;
-    trianguloMenor6.blue = 0;
+    trianguloMenor6.red = 255;
+    trianguloMenor6.green = 204;
+    trianguloMenor6.blue = 153;
     trianguloMenor6.backgroundColor = [UIColor clearColor];
     [self.view addSubview:trianguloMenor6];
     trianguloMenor6.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
