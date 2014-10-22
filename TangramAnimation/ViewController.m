@@ -11,7 +11,7 @@
 #import "Triangle.h"
 #import "Square.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic) Paralelogramo* parallelogram;
 @property (nonatomic) Square* square;
@@ -31,16 +31,36 @@
     
     
     
-   // [self createBigSquare];
+//    [self createBigSquare];
+   [self createLetterP];
+//    [self createLetterN];
+
+
     
-    //[self createLetterP];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterP)];
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.numberOfTapsRequired =1;
+    singleTap.delegate=self;
+    [self.view addGestureRecognizer:singleTap];
     
-   // [self createLetterN];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterN)];
+    doubleTap.numberOfTouchesRequired = 1;
+    doubleTap.numberOfTapsRequired =2;
+    doubleTap.delegate=self;
+    [self.view addGestureRecognizer:doubleTap];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(createBigSquare)];
+    longPress.numberOfTouchesRequired = 2;
+    longPress.numberOfTapsRequired =1;
+    longPress.delegate = self;
+    longPress.minimumPressDuration = 0.3;
+    longPress.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:longPress];
+
     
     [UIView animateWithDuration:0.0 animations:^{
         
-        [self setupPolygons];
+       // [self setupPolygons];
         
     }completion:nil];
     
@@ -49,13 +69,16 @@
         //[self createBigSquare];
         [self createLetterN];
     }completion:nil];
+
 }
+
+
+
 
 
 -(void)setupPolygons{
     
-    //Paralelogram 3
-    CGRect rectParallelogram = CGRectMake(937, 5023, 50, 100);
+     CGRect rectParallelogram = CGRectMake(937, 5023, 50, 100);
     self.parallelogram = [[Paralelogramo alloc] initWithFrame:rectParallelogram];
     self.parallelogram.backgroundColor = [UIColor clearColor];
     self.parallelogram.red = 153;
@@ -78,7 +101,14 @@
     
     
     
-    //triangulo 4
+    
+    
+//        [UIView animateWithDuration:2.0 animations:^{
+//            paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
+//        }];
+//
+//    
+//    
     CGRect rectLessTriangleOne = CGRectMake(32, 423, 50, 100);
     self.lessTriangleOne = [[Triangle alloc]initWithFrame:rectLessTriangleOne];
     self.lessTriangleOne.red = 255;
@@ -90,7 +120,6 @@
     
     
     
-    //Triangulo 7
     CGRect rectMidTriangle = CGRectMake(22+rectSquare.size.width, 1132+rectSquare.size.height, 50, 100);
     self.midTriangle = [[Triangle alloc] initWithFrame:rectMidTriangle];
     self.midTriangle.red = 0;
@@ -137,6 +166,10 @@
 
 -(void)createBigSquare{
     
+    
+    [UIView animateWithDuration:2.0 animations:^{
+
+    
     CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
     [self.parallelogram setFrame:rectParallelogram];
     
@@ -164,8 +197,10 @@
     CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
     [self.lessTriangleTwo setFrame:rectLessTriangleTwo];
     self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
-
     
+    }completion:nil];
+
+
 }
 
 
@@ -208,7 +243,78 @@
 
 -(void)createLetterP{
     
-  
+    //Paralelogram 3
+    CGRect rect = CGRectMake(-52, 466, 50, 100);
+    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
+    paralelogramo.backgroundColor = [UIColor clearColor];
+    paralelogramo.red = 153;
+    paralelogramo.blue = 255;
+    paralelogramo.green = 77;
+    [self.view addSubview:paralelogramo];
+    paralelogramo.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(135*M_PI/180),CGAffineTransformMakeScale(-1, 1));
+    
+    CGRect rect2 = CGRectMake(215,280, 50, 100);
+    //Quadrado 5
+    Square* quadrado = [[Square alloc]initWithFrame:rect2];
+    quadrado.backgroundColor = [UIColor clearColor];
+    quadrado.red = 255;
+    quadrado.blue = 77;
+    quadrado.green = 255;
+    quadrado.transform = CGAffineTransformMakeRotation(45*M_PI/180);
+    [self.view addSubview:quadrado];
+
+    //triangulo 4
+    CGRect rectTrianguloMenor4 = CGRectMake(89, 448, 50, 100);
+    Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
+    trianguloMenor4.red = 255;
+    trianguloMenor4.green = 77;
+    trianguloMenor4.blue = 255;
+    trianguloMenor4.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMenor4];
+    trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(135*M_PI/180));
+
+    //Triangulo 7
+    CGRect rectTriangulo7 = CGRectMake(65+rect2.size.width, 175+rect2.size.height, 50, 100);
+    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
+    triangle7.red = 0;
+    triangle7.green = 255;
+    triangle7.blue = 255;
+    triangle7.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangle7];
+    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(180*M_PI/180);
+    triangle7.transform = CGAffineTransformConcat(scale,rotate);
+    
+    //triangulo 1
+    CGRect rectTriangulo1 = CGRectMake(115, 126, 50, 100);
+    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
+    triangulo1.red = 0;
+    triangulo1.green = 0;
+    triangulo1.blue = 225;
+    triangulo1.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangulo1];
+    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(225*M_PI/180));
+    
+    //triangulo 2
+    CGRect rectTrianguloMaior2 = CGRectMake(335, 215, 50, 100);
+    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
+    trianguloMaior2.red = 80;
+    trianguloMaior2.green = 200;
+    trianguloMaior2.blue = 100;
+    trianguloMaior2.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMaior2];
+    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(360*M_PI/180));
+    
+    
+    //triangulo 6
+    CGRect rectTrianguloMenor6 = CGRectMake(230, 145, 50, 100);
+    Triangle* trianguloMenor6 = [[Triangle alloc]initWithFrame:rectTrianguloMenor6];
+    trianguloMenor6.red = 255;
+    trianguloMenor6.green = 204;
+    trianguloMenor6.blue = 153;
+    trianguloMenor6.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMenor6];
+    trianguloMenor6.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
 
 }
 
