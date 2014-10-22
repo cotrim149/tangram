@@ -38,16 +38,16 @@
    // [self createLetterN];
     
     
-    [UIView animateWithDuration:2.0 animations:^{
+    [UIView animateWithDuration:0.0 animations:^{
         
         [self setupPolygons];
         
     }completion:nil];
     
-    [UIView animateWithDuration:2.0 animations:^{
+    [UIView animateWithDuration:0.0 animations:^{
         
-        [self createBigSquare];
-        
+        //[self createBigSquare];
+        [self createLetterN];
     }completion:nil];
 }
 
@@ -171,6 +171,38 @@
 
 -(void)createLetterN{
     
+    CGFloat correctionFactorX = 50;
+    
+    CGRect rectBiggerTriangleOne = CGRectMake(115-correctionFactorX, 126, 50, 100);
+    [self.biggerTriangleOne setFrame:rectBiggerTriangleOne];
+    self.biggerTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
+
+    CGRect rectSquare = CGRectMake(165-correctionFactorX,179.8, 50, 100);
+    [self.square setFrame:rectSquare];
+
+    CGRect rectBiggerTriangleTwo = CGRectMake(254-correctionFactorX, 268.8, 50, 100);
+    [self.biggerTriangleTwo setFrame:rectBiggerTriangleTwo];
+    self.biggerTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(180*M_PI/180));
+
+    CGRect rectMidTriangle = CGRectMake(95-correctionFactorX, 370, 50, 100);
+    [self.midTriangle setFrame:rectMidTriangle];
+    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(0*M_PI/180);
+    self.midTriangle.transform = CGAffineTransformConcat(scale,rotate);
+
+    CGRect rectLessTriangleTwo = CGRectMake(79-correctionFactorX, 268, 50, 100);
+    [self.lessTriangleTwo setFrame:rectLessTriangleTwo];
+    self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
+    
+    
+    CGRect rectParallelogram = CGRectMake(106-correctionFactorX, 40, 50, 100);
+    [self.parallelogram setFrame:rectParallelogram];
+    
+    self.parallelogram.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(90*M_PI/180),CGAffineTransformMakeScale(-1, 1));
+    
+    CGRect rectLessTriangleOne = CGRectMake(350-correctionFactorX, 12, 50, 100);
+    [self.lessTriangleOne setFrame:rectLessTriangleOne];
+    self.lessTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation((270-45)*M_PI/180));
     
 }
 
