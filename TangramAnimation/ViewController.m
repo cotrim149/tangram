@@ -56,7 +56,7 @@
 
     
     //Triangulo 7
-    CGRect rectTriangulo7 = CGRectMake(243+rect2.size.width, 133+rect2.size.height, 50, 100);
+    CGRect rectTriangulo7 = CGRectMake(240+rect2.size.width, 133+rect2.size.height, 50, 100);
     Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
     triangle7.red = 20;
     triangle7.green = 40;
