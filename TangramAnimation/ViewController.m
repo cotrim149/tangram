@@ -54,7 +54,17 @@
     triangulo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
 
     
-    
+    //Triangulo 7
+    CGRect rectTriangulo7 = CGRectMake(243+rectTriangulo.size.width, 133+rectTriangulo.size.height, 50, 100);
+    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
+    triangle7.red = 20;
+    triangle7.green = 40;
+    triangle7.blue = 200;
+    triangle7.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:triangle7];
+    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
+    triangle7.transform = CGAffineTransformConcat(scale,rotate);
     
     
 }
