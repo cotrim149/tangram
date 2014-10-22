@@ -10,7 +10,16 @@
 #import "Paralelogramo.h"
 #import "Triangle.h"
 #import "Square.h"
+
 @interface ViewController ()
+
+@property (nonatomic) Paralelogramo* parallelogram;
+@property (nonatomic) Square* square;
+@property (nonatomic) Triangle* lessTriangleOne;
+@property (nonatomic) Triangle* lessTriangleTwo;
+@property (nonatomic) Triangle* midTriangle;
+@property (nonatomic) Triangle* biggerTriangleOne;
+@property (nonatomic) Triangle* biggerTriangleTwo;
 
 @end
 
@@ -22,265 +31,150 @@
     
     
     
+   // [self createBigSquare];
+    
+    //[self createLetterP];
+    
+   // [self createLetterN];
+    
+    [self setupPolygons];
     [self createBigSquare];
-    [self createLetterP];
-    [self createLetterN];
 }
 
--(void)createLetterN{
+
+-(void)setupPolygons{
     
     //Paralelogram 3
-    CGRect rect = CGRectMake(97, 50, 50, 100);
-    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
-    paralelogramo.backgroundColor = [UIColor clearColor];
-    paralelogramo.red = 153;
-    paralelogramo.blue = 255;
-    paralelogramo.green = 77;
-    [self.view addSubview:paralelogramo];
+    CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
+    self.parallelogram = [[Paralelogramo alloc] initWithFrame:rectParallelogram];
+    self.parallelogram.backgroundColor = [UIColor clearColor];
+    self.parallelogram.red = 153;
+    self.parallelogram.blue = 255;
+    self.parallelogram.green = 77;
+    [self.view addSubview:self.parallelogram];
     
     
-    CGRect rect2 = CGRectMake(238,109, 50, 100);
     //Quadrado 5
-    Square* quadrado = [[Square alloc]initWithFrame:rect2];
-    quadrado.backgroundColor = [UIColor clearColor];
-    quadrado.red = 255;
-    quadrado.blue = 77;
-    quadrado.green = 255;
-    [self.view addSubview:quadrado];
+    CGRect rectSquare = CGRectMake(238,109, 50, 100);
+    self.square = [[Square alloc]initWithFrame:rectSquare];
+    self.square.backgroundColor = [UIColor clearColor];
+    self.square.red = 255;
+    self.square.blue = 77;
+    self.square.green = 255;
+    [self.view addSubview:self.square];
     //    [UIView animateWithDuration:2.0 animations:^{
-    //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
+    //        self.parallelogram.transform = CGAffineTransformMakeScale(5, 5);
     //    }];
     
     
     
     //triangulo 4
-    CGRect rectTrianguloMenor4 = CGRectMake(185, 161.8, 50, 100);
-    Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
-    trianguloMenor4.red = 255;
-    trianguloMenor4.green = 77;
-    trianguloMenor4.blue = 255;
-    trianguloMenor4.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor4];
-    trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+    CGRect rectLessTriangleOne = CGRectMake(185, 161.8, 50, 100);
+    self.lessTriangleOne = [[Triangle alloc]initWithFrame:rectLessTriangleOne];
+    self.lessTriangleOne.red = 255;
+    self.lessTriangleOne.green = 77;
+    self.lessTriangleOne.blue = 255;
+    self.lessTriangleOne.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.lessTriangleOne];
+    self.lessTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
     
     
     
     //Triangulo 7
-    CGRect rectTriangulo7 = CGRectMake(241+rect2.size.width, 132+rect2.size.height, 50, 100);
-    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
-    triangle7.red = 0;
-    triangle7.green = 255;
-    triangle7.blue = 255;
-    triangle7.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangle7];
+    CGRect rectMidTriangle = CGRectMake(241+rectSquare.size.width, 132+rectSquare.size.height, 50, 100);
+    self.midTriangle = [[Triangle alloc] initWithFrame:rectMidTriangle];
+    self.midTriangle.red = 0;
+    self.midTriangle.green = 255;
+    self.midTriangle.blue = 255;
+    self.midTriangle.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.midTriangle];
     CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
     CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
-    triangle7.transform = CGAffineTransformConcat(scale,rotate);
+    self.midTriangle.transform = CGAffineTransformConcat(scale,rotate);
     
     //triangulo 1
-    CGRect rectTriangulo1 = CGRectMake(115, 126, 50, 100);
-    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
-    triangulo1.red = 0;
-    triangulo1.green = 0;
-    triangulo1.blue = 225;
-    triangulo1.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangulo1];
-    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
+    CGRect rectBiggerTriangleOne = CGRectMake(115, 126, 50, 100);
+    self.biggerTriangleOne = [[Triangle alloc]initWithFrame:rectBiggerTriangleOne];
+    self.biggerTriangleOne.red = 0;
+    self.biggerTriangleOne.green = 0;
+    self.biggerTriangleOne.blue = 225;
+    self.biggerTriangleOne.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.biggerTriangleOne];
+    self.biggerTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
     
     //triangulo 2
-    CGRect rectTrianguloMaior2 = CGRectMake(186, 56, 50, 100);
-    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
-    trianguloMaior2.red = 80;
-    trianguloMaior2.green = 200;
-    trianguloMaior2.blue = 100;
-    trianguloMaior2.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMaior2];
-    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
+    CGRect rectBiggerTriangleTwo = CGRectMake(186, 56, 50, 100);
+    self.biggerTriangleTwo = [[Triangle alloc]initWithFrame:rectBiggerTriangleTwo];
+    self.biggerTriangleTwo.red = 80;
+    self.biggerTriangleTwo.green = 200;
+    self.biggerTriangleTwo.blue = 100;
+    self.biggerTriangleTwo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.biggerTriangleTwo];
+    self.biggerTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
     
     
     //triangulo 6
-    CGRect rectTrianguloMenor6 = CGRectMake(292, 57, 50, 100);
-    Triangle* trianguloMenor6 = [[Triangle alloc]initWithFrame:rectTrianguloMenor6];
-    trianguloMenor6.red = 255;
-    trianguloMenor6.green = 204;
-    trianguloMenor6.blue = 153;
-    trianguloMenor6.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor6];
-    trianguloMenor6.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
+    CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
+    self.lessTriangleTwo = [[Triangle alloc]initWithFrame:rectLessTriangleTwo];
+    self.lessTriangleTwo.red = 255;
+    self.lessTriangleTwo.green = 204;
+    self.lessTriangleTwo.blue = 153;
+    self.lessTriangleTwo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.lessTriangleTwo];
+    self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
     
+    
+    
+    
+}
 
+
+-(void)createBigSquare{
+    
+    CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
+    [self.parallelogram setFrame:rectParallelogram];
+    
+    CGRect rectSquare = CGRectMake(238,109, 50, 100);
+    [self.square setFrame:rectSquare];
+    
+    CGRect rectLessTriangleOne = CGRectMake(185, 161.8, 50, 100);
+    [self.lessTriangleOne setFrame:rectLessTriangleOne];
+    self.lessTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+    
+    CGRect rectMidTriangle = CGRectMake(241+rectSquare.size.width, 132+rectSquare.size.height, 50, 100);
+    [self.lessTriangleOne setFrame:rectMidTriangle];
+    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
+    self.midTriangle.transform = CGAffineTransformConcat(scale,rotate);
+
+    CGRect rectBiggerTriangleOne = CGRectMake(115, 126, 50, 100);
+    [self.biggerTriangleOne setFrame:rectBiggerTriangleOne];
+    self.biggerTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
+
+    CGRect rectBiggerTriangleTwo = CGRectMake(186, 56, 50, 100);
+    [self.biggerTriangleTwo setFrame:rectBiggerTriangleTwo];
+    self.biggerTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
+    
+    CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
+    [self.lessTriangleTwo setFrame:rectLessTriangleTwo];
+    self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
+
+    
+}
+
+
+-(void)createLetterN{
     
     
 }
 
 -(void)createLetterP{
     
-    //Paralelogram 3
-    CGRect rect = CGRectMake(97, 50, 50, 100);
-    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
-    paralelogramo.backgroundColor = [UIColor clearColor];
-    paralelogramo.red = 153;
-    paralelogramo.blue = 255;
-    paralelogramo.green = 77;
-    [self.view addSubview:paralelogramo];
-    
-    
-    CGRect rect2 = CGRectMake(238,109, 50, 100);
-    //Quadrado 5
-    Square* quadrado = [[Square alloc]initWithFrame:rect2];
-    quadrado.backgroundColor = [UIColor clearColor];
-    quadrado.red = 255;
-    quadrado.blue = 77;
-    quadrado.green = 255;
-    [self.view addSubview:quadrado];
-    //    [UIView animateWithDuration:2.0 animations:^{
-    //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
-    //    }];
-    
-    
-    
-    //triangulo 4
-    CGRect rectTrianguloMenor4 = CGRectMake(185, 161.8, 50, 100);
-    Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
-    trianguloMenor4.red = 255;
-    trianguloMenor4.green = 77;
-    trianguloMenor4.blue = 255;
-    trianguloMenor4.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor4];
-    trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
-    
-    
-    
-    //Triangulo 7
-    CGRect rectTriangulo7 = CGRectMake(241+rect2.size.width, 132+rect2.size.height, 50, 100);
-    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
-    triangle7.red = 0;
-    triangle7.green = 255;
-    triangle7.blue = 255;
-    triangle7.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangle7];
-    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
-    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
-    triangle7.transform = CGAffineTransformConcat(scale,rotate);
-    
-    //triangulo 1
-    CGRect rectTriangulo1 = CGRectMake(115, 126, 50, 100);
-    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
-    triangulo1.red = 0;
-    triangulo1.green = 0;
-    triangulo1.blue = 225;
-    triangulo1.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangulo1];
-    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
-    
-    //triangulo 2
-    CGRect rectTrianguloMaior2 = CGRectMake(186, 56, 50, 100);
-    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
-    trianguloMaior2.red = 80;
-    trianguloMaior2.green = 200;
-    trianguloMaior2.blue = 100;
-    trianguloMaior2.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMaior2];
-    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
-    
-    
-    //triangulo 6
-    CGRect rectTrianguloMenor6 = CGRectMake(292, 57, 50, 100);
-    Triangle* trianguloMenor6 = [[Triangle alloc]initWithFrame:rectTrianguloMenor6];
-    trianguloMenor6.red = 255;
-    trianguloMenor6.green = 204;
-    trianguloMenor6.blue = 153;
-    trianguloMenor6.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor6];
-    trianguloMenor6.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
-    
+  
 
 }
 
--(void)createBigSquare{
-    
-    //Paralelogram 3
-    CGRect rect = CGRectMake(97, 50, 50, 100);
-    Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
-    paralelogramo.backgroundColor = [UIColor clearColor];
-    paralelogramo.red = 153;
-    paralelogramo.blue = 255;
-    paralelogramo.green = 77;
-    [self.view addSubview:paralelogramo];
-    
-    
-    CGRect rect2 = CGRectMake(238,109, 50, 100);
-    //Quadrado 5
-    Square* quadrado = [[Square alloc]initWithFrame:rect2];
-    quadrado.backgroundColor = [UIColor clearColor];
-    quadrado.red = 255;
-    quadrado.blue = 77;
-    quadrado.green = 255;
-    [self.view addSubview:quadrado];
-    //    [UIView animateWithDuration:2.0 animations:^{
-    //        paralelogramo.transform = CGAffineTransformMakeScale(5, 5);
-    //    }];
-    
-    
-    
-    //triangulo 4
-    CGRect rectTrianguloMenor4 = CGRectMake(185, 161.8, 50, 100);
-    Triangle* trianguloMenor4 = [[Triangle alloc]initWithFrame:rectTrianguloMenor4];
-    trianguloMenor4.red = 255;
-    trianguloMenor4.green = 77;
-    trianguloMenor4.blue = 255;
-    trianguloMenor4.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor4];
-    trianguloMenor4.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
-    
-    
-    
-    //Triangulo 7
-    CGRect rectTriangulo7 = CGRectMake(241+rect2.size.width, 132+rect2.size.height, 50, 100);
-    Triangle *triangle7 = [[Triangle alloc] initWithFrame:rectTriangulo7];
-    triangle7.red = 0;
-    triangle7.green = 255;
-    triangle7.blue = 255;
-    triangle7.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangle7];
-    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
-    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
-    triangle7.transform = CGAffineTransformConcat(scale,rotate);
-    
-    //triangulo 1
-    CGRect rectTriangulo1 = CGRectMake(115, 126, 50, 100);
-    Triangle* triangulo1 = [[Triangle alloc]initWithFrame:rectTriangulo1];
-    triangulo1.red = 0;
-    triangulo1.green = 0;
-    triangulo1.blue = 225;
-    triangulo1.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:triangulo1];
-    triangulo1.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
-    
-    //triangulo 2
-    CGRect rectTrianguloMaior2 = CGRectMake(186, 56, 50, 100);
-    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
-    trianguloMaior2.red = 80;
-    trianguloMaior2.green = 200;
-    trianguloMaior2.blue = 100;
-    trianguloMaior2.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMaior2];
-    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
-    
-    
-    //triangulo 6
-    CGRect rectTrianguloMenor6 = CGRectMake(292, 57, 50, 100);
-    Triangle* trianguloMenor6 = [[Triangle alloc]initWithFrame:rectTrianguloMenor6];
-    trianguloMenor6.red = 255;
-    trianguloMenor6.green = 204;
-    trianguloMenor6.blue = 153;
-    trianguloMenor6.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:trianguloMenor6];
-    trianguloMenor6.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
-    
-    
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
