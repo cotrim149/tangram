@@ -146,7 +146,7 @@
         self.doubleTap.enabled = YES;
     
     
-    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         
     [self setupPolygons];
         
@@ -187,7 +187,7 @@
 
 -(void)createLetterN:(UITapGestureRecognizer*)tap{
     
-    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
     
         
         [self setupPolygons];
@@ -234,7 +234,7 @@
 
 -(void)createLetterP:(UITapGestureRecognizer*)tap{
     
-    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
 
     [self setupPolygons];
     
