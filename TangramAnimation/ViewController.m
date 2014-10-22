@@ -68,6 +68,17 @@
 
     
     
+    CGRect rectTrianguloMaior2 = CGRectMake(185, 55, 50, 100);
+    Triangle* trianguloMaior2 = [[Triangle alloc]initWithFrame:rectTrianguloMaior2];
+    trianguloMaior2.red = 80;
+    trianguloMaior2.green = 200;
+    trianguloMaior2.blue = 100;
+    trianguloMaior2.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:trianguloMaior2];
+    trianguloMaior2.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(3, 3),CGAffineTransformMakeRotation(90*M_PI/180));
+    
+    
+    
 
     
     
