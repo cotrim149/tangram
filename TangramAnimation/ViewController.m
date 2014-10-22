@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CGRect rect = CGRectMake(100, 50, 50, 50);
+    CGRect rect = CGRectMake(100, 50, 50, 100);
     Paralelogramo* paralelogramo = [[Paralelogramo alloc]initWithFrame:rect];
     paralelogramo.backgroundColor = [UIColor clearColor];
     paralelogramo.red = 140;

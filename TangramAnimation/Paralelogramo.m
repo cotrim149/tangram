@@ -14,7 +14,7 @@
 - (void)drawRect:(CGRect)rect {
     
     //primeiro triangulo da esquerda
-    CGRect rectTriangulo = CGRectMake(0, 200, 50, 100);
+    CGRect rectTriangulo = CGRectMake(rect.origin.x, rect.origin.y+rect.size.height*2, rect.size.width, rect.size.height);
     Triangle* triangulo = [[Triangle alloc]initWithFrame:rectTriangulo];
     triangulo.backgroundColor = [UIColor clearColor];
     triangulo.red = _red;
@@ -24,7 +24,7 @@
     triangulo.transform = CGAffineTransformMakeRotation(45*M_PI/180);
 
     //triangulo de cima do quadrado
-    CGRect rectTriangulo2 = CGRectMake(35, 165, 50, 100);
+    CGRect rectTriangulo2 = CGRectMake(rect.origin.x+rect.size.width*0.70, rect.origin.y+rect.size.height*1.65, rect.size.width, rect.size.height);
     Triangle* triangulo2 = [[Triangle alloc]initWithFrame:rectTriangulo2];
     triangulo2.backgroundColor = [UIColor clearColor];
     triangulo2.red = _red;
@@ -34,7 +34,7 @@
     triangulo2.transform = CGAffineTransformMakeRotation(225*M_PI/180);
 
     //triangulo de baixo do quadrado
-    CGRect rectTriangulo3 = CGRectMake(70, 200, 50, 100);
+    CGRect rectTriangulo3 = CGRectMake(rect.origin.x+rect.size.width*1.4, rect.origin.y+rect.size.height*2, rect.size.width, rect.size.height);
     Triangle* triangulo3 = [[Triangle alloc]initWithFrame:rectTriangulo3];
     triangulo3.backgroundColor = [UIColor clearColor];
     [self addSubview:triangulo3];
@@ -44,7 +44,7 @@
     triangulo3.transform = CGAffineTransformMakeRotation(45*M_PI/180);
     
     //triangulo de baixo do quadrado
-    CGRect rectTriangulo4 = CGRectMake(105, 165, 50, 100);
+    CGRect rectTriangulo4 = CGRectMake(rect.origin.x+rect.size.width*2.1, rect.origin.y+rect.size.height*1.65, rect.size.width, rect.size.height);
     Triangle* triangulo4 = [[Triangle alloc]initWithFrame:rectTriangulo4];
     triangulo4.backgroundColor = [UIColor clearColor];
     triangulo4.red = _red;
