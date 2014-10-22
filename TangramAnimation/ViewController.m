@@ -37,8 +37,18 @@
     
    // [self createLetterN];
     
-    [self setupPolygons];
-    [self createBigSquare];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        
+        [self setupPolygons];
+        
+    }completion:nil];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        
+        [self createBigSquare];
+        
+    }completion:nil];
 }
 
 
@@ -76,7 +86,7 @@
     self.lessTriangleOne.blue = 255;
     self.lessTriangleOne.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.lessTriangleOne];
-    self.lessTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
+
     
     
     
@@ -88,9 +98,7 @@
     self.midTriangle.blue = 255;
     self.midTriangle.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.midTriangle];
-    CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
-    CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
-    self.midTriangle.transform = CGAffineTransformConcat(scale,rotate);
+
     
     //triangulo 1
     CGRect rectBiggerTriangleOne = CGRectMake(115, 126, 50, 100);
@@ -100,7 +108,7 @@
     self.biggerTriangleOne.blue = 225;
     self.biggerTriangleOne.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.biggerTriangleOne];
-    self.biggerTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82,2.82),CGAffineTransformMakeRotation(360*M_PI/180));
+
     
     //triangulo 2
     CGRect rectBiggerTriangleTwo = CGRectMake(186, 56, 50, 100);
@@ -110,8 +118,7 @@
     self.biggerTriangleTwo.blue = 100;
     self.biggerTriangleTwo.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.biggerTriangleTwo];
-    self.biggerTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.82, 2.82),CGAffineTransformMakeRotation(90*M_PI/180));
-    
+
     
     //triangulo 6
     CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
@@ -121,7 +128,6 @@
     self.lessTriangleTwo.blue = 153;
     self.lessTriangleTwo.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.lessTriangleTwo];
-    self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
     
     
     
@@ -142,7 +148,7 @@
     self.lessTriangleOne.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(270*M_PI/180));
     
     CGRect rectMidTriangle = CGRectMake(241+rectSquare.size.width, 132+rectSquare.size.height, 50, 100);
-    [self.lessTriangleOne setFrame:rectMidTriangle];
+    [self.midTriangle setFrame:rectMidTriangle];
     CGAffineTransform scale = CGAffineTransformMakeScale(2, 2);
     CGAffineTransform rotate = CGAffineTransformMakeRotation((90-45)*M_PI/180);
     self.midTriangle.transform = CGAffineTransformConcat(scale,rotate);
