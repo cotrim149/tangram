@@ -11,7 +11,7 @@
 #import "Triangle.h"
 #import "Square.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic) Paralelogramo* parallelogram;
 @property (nonatomic) Square* square;
@@ -31,12 +31,28 @@
     
     
     
-   // [self createBigSquare];
+
     
-    //[self createLetterP];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterP)];
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.numberOfTapsRequired =1;
+    singleTap.delegate=self;
+    [self.view addGestureRecognizer:singleTap];
     
-   // [self createLetterN];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createLetterN)];
+    doubleTap.numberOfTouchesRequired = 1;
+    doubleTap.numberOfTapsRequired =2;
+    doubleTap.delegate=self;
+    [self.view addGestureRecognizer:doubleTap];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(createBigSquare)];
+    longPress.numberOfTouchesRequired = 2;
+    longPress.numberOfTapsRequired =1;
+    longPress.delegate = self;
+    longPress.minimumPressDuration = 0.3;
+    longPress.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:longPress];
+
     
     [UIView animateWithDuration:2.0 animations:^{
         
@@ -44,12 +60,10 @@
         
     }completion:nil];
     
-    [UIView animateWithDuration:2.0 animations:^{
-        
-        [self createBigSquare];
-        
-    }completion:nil];
 }
+
+
+
 
 
 -(void)setupPolygons{
@@ -137,6 +151,10 @@
 
 -(void)createBigSquare{
     
+    
+    [UIView animateWithDuration:2.0 animations:^{
+
+    
     CGRect rectParallelogram = CGRectMake(97, 50, 50, 100);
     [self.parallelogram setFrame:rectParallelogram];
     
@@ -164,20 +182,22 @@
     CGRect rectLessTriangleTwo = CGRectMake(292, 57, 50, 100);
     [self.lessTriangleTwo setFrame:rectLessTriangleTwo];
     self.lessTriangleTwo.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.4, 1.4),CGAffineTransformMakeRotation(180*M_PI/180));
-
     
+    }completion:nil];
+
+
 }
 
 
 -(void)createLetterN{
-    
-    
+
+
 }
 
 -(void)createLetterP{
     
-  
 
+    
 }
 
 
